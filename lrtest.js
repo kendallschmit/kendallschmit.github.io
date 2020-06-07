@@ -30,7 +30,7 @@ document.addEventListener('keydown', function(event) {
         }
     }
     document.getElementById('prompt').innerHTML = '';
-    timerId = setTimeout(nextPrompt, Math.random() * 3000)
+    timerId = setTimeout(nextPrompt, Math.max(300, Math.random() * 2000))
 });
 
 function reset() {
