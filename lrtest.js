@@ -9,8 +9,8 @@ var paused = false;
 var timerId = -1;
 
 prompts = [
-    { 'keyCode': 37, 'name': 'Left' },
-    { 'keyCode': 39, 'name': 'Right' }
+    { 'keyCode': 37, 'name': 'left' },
+    { 'keyCode': 39, 'name': 'right' }
 ];
 
 document.addEventListener('keydown', function(event) {
@@ -22,13 +22,14 @@ document.addEventListener('keydown', function(event) {
     if (paused) {
         return;
     }
-    else if (event.keyCode == 37 || event.keyCode == 39) {
+    if (event.keyCode == 37 || event.keyCode == 39) {
         if (judge(event.keyCode)) {
             printStats();
             paused = true;
             return;
         }
     }
+    paused = true;
     document.getElementById('prompt').innerHTML = '';
     timerId = setTimeout(nextPrompt, Math.max(300, Math.random() * 2000))
 });
@@ -40,6 +41,7 @@ function reset() {
     timerId = -1;
     expectedKeyCode = 0;
     startTime = 0;
+    totalTime = 0;
     correctCount = 0;
     paused = false;
     document.getElementById('prompt').innerHTML = 'left or right to start';
@@ -52,6 +54,7 @@ function nextPrompt() {
     let p = prompts[Math.floor(Math.random() * prompts.length)];
     expectedKeyCode = p['keyCode'];
     document.getElementById('prompt').innerHTML = p['name'];
+    paused = false;
 }
 
 function judge(keyCode) {
