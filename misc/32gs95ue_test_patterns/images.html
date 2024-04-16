@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="lrtest.js"></script>
+</head>
+<body onload="reset()">
+    <h1>
+    Test images for weird near-black behavior on LG UltraGear 32GS95UE
+    </h1>
+
+    <p>
+    When the images are shown, patches slowly appear that span horizontally and
+    vertically from the text. Patches should be visible after displaying the
+    image for 30s in fullscreen at the factory default Gamer 1 setting in SDR.
+    </p>
+
+    <p>
+    <b>
+    Click an image to fullscreen. Click again to exit fullscreen.
+    </b>
+    </p>
+
+    <br/>
+    <div>
+        <p>1. dark background, text, light bar on left, dark bar on right, light scribble on right:</p>
+        <img class="testimage" src="0a0a0a_text_0b0b0b-l_090909-r_0b0b0b-skrib-r_1080p.png">
+    </div>
+
+    <br/>
+    <div>
+        <p>2. dark background, text:</p>
+        <img class="testimage" src="0a0a0a_text_1080p.png">
+    </div>
+
+    <br/>
+    <div>
+        <p>3. dark background (bring up the monitor settings panel for 30s to see dark patches):</p>
+        <img class="testimage" src="0a0a0a_1080p.png">
+    </div>
+
+    <br/>
+    <div>
+        <p>iPhone picture of what I see with image 1:</p>
+        <img class="testimage" src="iphone_picture.png">
+    </div>
+</body>
+</html>
